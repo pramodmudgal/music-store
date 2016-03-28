@@ -1,6 +1,19 @@
 package com.mudgal.musicstore.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Transient;
+
+import org.springframework.web.multipart.MultipartFile;
+
+@Entity
 public class Product {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private String productId;
 	private String productName;
 	private String productCategory;
 	private String productDescription;
@@ -9,6 +22,9 @@ public class Product {
 	private String productStatus;
 	private int productUnitInStock;
 	private String productManufacturer;
+	
+	@Transient
+	private MultipartFile productImage;
 
 	public String getProductName() {
 		return productName;
@@ -72,6 +88,22 @@ public class Product {
 
 	public void setProductUnitInStock(int productUnitInStock) {
 		this.productUnitInStock = productUnitInStock;
+	}
+
+	public String getProductId() {
+		return productId;
+	}
+
+	public void setProductId(String productId) {
+		this.productId = productId;
+	}
+
+	public MultipartFile getProductImage() {
+		return productImage;
+	}
+
+	public void setProductImage(MultipartFile productImage) {
+		this.productImage = productImage;
 	}
 
 }

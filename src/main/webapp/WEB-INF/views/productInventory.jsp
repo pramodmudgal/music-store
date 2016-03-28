@@ -9,8 +9,8 @@
 <div class="container-wrapper">
 	<div class="container">
 		<div class="page-header">
-			<h1>All Products</h1>
-			<p class="lead">Checkout all the awesome products available now!</p>
+			<h1>Product Inventory Page</h1>
+			<p class="lead">This is a product inventory page</p>
 		</div>
 		<table class="table table-stripped table-hover">
 			<thead>
@@ -33,14 +33,19 @@
 					<td><a
 						href="<spring:url value='/productList/viewProduct/${product.productId}' />">
 							<span class="glyphicon glyphicon-info-sign" />
+					</a> <a
+						href="<spring:url value='/admin/productInventory/deleteProduct/${product.productId}' />">
+							<span class="glyphicon glyphicon-remove" />
 					</a></td>
 				</tr>
 			</c:forEach>
 
 		</table>
 
-	</div>
+		<a href='<spring:url value="/admin/productInventory/addProduct"/>'
+			class="btn btn-primary">Add Product</a>
 
+	</div>
 </div>
 
-<%@include file="/WEB-INF/views/template/footer.jsp"%>
+ <%@include file="/WEB-INF/views/template/footer.jsp"%>
