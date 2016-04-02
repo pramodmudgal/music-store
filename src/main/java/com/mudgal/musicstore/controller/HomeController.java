@@ -98,8 +98,8 @@ public class HomeController {
 		productDao.addProduct(product);
 
 		MultipartFile productImage = product.getProductImage();
-		String rootDirectory = request.getSession().getServletContext().getRealPath("/");
-		path = Paths.get(rootDirectory + "\\WEB-INF\\resources\\images\\" + product.getProductId() + ".png");
+		String rootDirectory = System.getProperty("user.home");
+		path = Paths.get(rootDirectory + "\\images\\" + product.getProductId() + ".png");
 
 		if (productImage != null && !productImage.isEmpty()) {
 			try {

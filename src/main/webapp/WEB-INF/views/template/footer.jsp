@@ -9,11 +9,11 @@
 					<a href="#">Terms</a>
 				</p>
 			</footer>
-		</div>
+		
+	<!-- /.container -->
+	</div>
 
 	</div>
-	<!-- /.container -->
-
 
 	<!-- Bootstrap core JavaScript
     ================================================== -->
